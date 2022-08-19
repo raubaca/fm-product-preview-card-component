@@ -32,7 +32,6 @@ html {
 body {
   display: grid;
   grid-template-rows: 1fr auto;
-  gap: 1rem;
   min-height: 100vh;
   margin: 0;
   padding: 3rem 1rem 0;
@@ -125,7 +124,7 @@ button {
 
 .attribution {
   font-size: 10px;
-  line-height: 2;
+  line-height: 3;
   text-align: center;
   a {
     color: var(--dark-cyan);
