@@ -1,0 +1,150 @@
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+  --font-family-montserrat: Montserrat, sans-serif;
+  --font-family-fraunces: Fraunces, serif;
+  --font-size-large: 32px;
+  --font-size-medium: 14px;
+  --font-size-small: 12px;
+  --gap: 22px;
+}
+
+%title {
+  font-family: var(--font-family-fraunces);
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  line-height: 1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 1rem;
+  min-height: 100vh;
+  margin: 0;
+  padding: 3rem 1rem 0;
+  background-color: var(--cream);
+  color: var(--dark-grayish-blue);
+  font-family: var(--font-family-montserrat);
+  font-weight: 500;
+  font-size: var(--font-size-medium);
+}
+
+button {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  max-width: 340px;
+  background-color: var(--white);
+  border-radius: 1rem;
+  overflow: hidden;
+  &__img {
+    display: block;
+    height: 240px;
+    width: 100%;
+  }
+  &__info {
+    display: grid;
+    gap: var(--gap);
+    padding: var(--gap);
+  }
+}
+
+.title {
+  &__label {
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+  }
+  &__name {
+    @extend %title;
+    margin: 11px 0 -6px;
+    color: var(--dark-blue);
+  }
+}
+
+.description {
+  line-height: 23px;
+  margin: 0;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  &__new {
+    @extend %title;
+    color: var(--dark-cyan);
+  }
+  &__old {
+    text-decoration: line-through;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  background-color: var(--dark-cyan);
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 1rem;
+  transition: background-color 0.3s ease-in;
+  &__icon {
+    margin-right: 1rem;
+  }
+  &:hover {
+    background-color: var(--dark-blue);
+  }
+}
+
+.attribution {
+  font-size: 10px;
+  line-height: 2;
+  text-align: center;
+  a {
+    color: var(--dark-cyan);
+  }
+}
+
+@media screen and (min-width: 640px) {
+  body {
+    --gap: 30px;
+  }
+  .card {
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    &__img {
+      height: 100%;
+    }
+  }
+  .title__name {
+    margin: 20px 0 -6px;
+  }
+}
